@@ -13,7 +13,11 @@ test("returns winner", () => {
   const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
 
   expect(winner).toBe("Stephen A. Ingram");
-  expect(utils.getWinner).toHaveBeenCalledTimes(2)
+  expect(utils.getWinner).toHaveBeenCalledTimes(2);
+  expect(utils.getWinner).toHaveBeenCalledWith(
+    "Stephen A. Ingram",
+    "Kerstin Dengl"
+  );
 
   // cleanup
 
