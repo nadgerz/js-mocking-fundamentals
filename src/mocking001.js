@@ -8,3 +8,5 @@ const utils = require("./utils");
 const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
 
 log(winner);
+
+assert.strictEqual(winner, "Stephen A. Ingram");
