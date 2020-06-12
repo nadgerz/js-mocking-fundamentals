@@ -16,6 +16,7 @@ test("returns winner", () => {
 
   console.log(utils.getWinner);
   console.log(utils.getWinner.toString());
+  console.log(utils.getWinner.mock)
 
   expect(utils.getWinner).toHaveBeenCalledTimes(2);
   expect(utils.getWinner).toHaveBeenCalledWith(
