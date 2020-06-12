@@ -5,16 +5,19 @@ const assert = require("assert");
 const thumbWar = require("./thumb-war");
 const utils = require("./utils");
 
-test("retuens winner", () => {
-  const originalGetWinner = utils.getWinner;
+function fn(impl) {
+  const mockFn = (...args) => {
+    console.log(args);
+  };
+}
 
-  utils.getWinner = (player1, player2) => player1;
+const originalGetWinner = utils.getWinner;
 
-  const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
+utils.getWinner = (player1, player2) => player1;
 
-  expect(winner).toBe("Stephen A. Ingram");
+const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
 
-  // cleanup
+assert.strictEqual(winner, "Stephen A. Ingram");
 
-  utils.getWinner = originalGetWinner;
-});
+// cleanup
+utils.getWinner = originalGetWinner;
