@@ -11,12 +11,12 @@ function fn(impl) {
     return impl(...args);
   };
 
-  return mockfn;
+  return mockFn;
 }
 
 const originalGetWinner = utils.getWinner;
 
-utils.getWinner = (player1, player2) => player1;
+utils.getWinner = fn((player1, player2) => player1);
 
 const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
 
