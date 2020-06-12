@@ -8,7 +8,10 @@ const utils = require("./utils");
 function fn(impl) {
   const mockFn = (...args) => {
     console.log(args);
+    return impl(...args);
   };
+
+  return mockfn;
 }
 
 const originalGetWinner = utils.getWinner;
