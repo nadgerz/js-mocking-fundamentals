@@ -8,11 +8,12 @@ const utils = require("../utils");
 test("returns winner", () => {
   const originalGetWinner = utils.getWinner;
 
-  utils.getWinner = (player1, player2) => player1;
+  utils.getWinner = jest.fn((player1, player2) => player1);
 
   const winner = thumbWar("Stephen A. Ingram", "Kerstin Dengl");
 
   expect(winner).toBe("Stephen A. Ingram");
+  expect(utils.getWinner).toHaveBeenCalledTimes(2)
 
   // cleanup
 
