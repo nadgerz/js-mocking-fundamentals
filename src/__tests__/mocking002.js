@@ -14,9 +14,14 @@ test("returns winner", () => {
 
   expect(winner).toBe("Stephen A. Ingram");
 
-  console.log(utils.getWinner);
-  console.log(utils.getWinner.toString());
-  console.log(utils.getWinner.mock)
+  // console.log(utils.getWinner);
+  // console.log(utils.getWinner.toString());
+  // console.log(utils.getWinner.mock)
+
+  expect(utils.getWinner.mock.calls).toEqual([
+        [ 'Stephen A. Ingram', 'Kerstin Dengl' ],
+        [ 'Stephen A. Ingram', 'Kerstin Dengl' ]
+      ])
 
   expect(utils.getWinner).toHaveBeenCalledTimes(2);
   expect(utils.getWinner).toHaveBeenCalledWith(
