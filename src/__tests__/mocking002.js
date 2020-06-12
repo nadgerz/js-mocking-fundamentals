@@ -19,7 +19,18 @@ test("returns winner", () => {
     "Kerstin Dengl"
   );
 
-  // cleanup
+  expect(utils.getWinner).toHaveBeenNthCalledWith(
+    1,
+    "Stephen A. Ingram",
+    "Kerstin Dengl"
+  );
 
+  expect(utils.getWinner).toHaveBeenNthCalledWith(
+    2,
+    "Stephen A. Ingram",
+    "Kerstin Dengl"
+  );
+
+  // cleanup
   utils.getWinner = originalGetWinner;
 });
